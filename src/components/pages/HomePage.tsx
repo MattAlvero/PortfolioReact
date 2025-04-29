@@ -8,8 +8,8 @@ const HomePage = () => {
     // Implement your search logic here
   };
 
-  return (
-    <PortfolioPageTemplate onSearch={handleSearch}>
+  const body = (
+    <>
       <h1 className="text-col text-4xl font-bold text-center mb-8 text-black">About Me</h1>
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -20,6 +20,12 @@ const HomePage = () => {
           <img className="rounded-full object-cover w-52" src={myImage} alt="An image of me."/>
         </div>
       </div>
+    </>
+  );
+
+  return (
+    <PortfolioPageTemplate onSearch={handleSearch} children={body}>
+      
     </PortfolioPageTemplate>
   );
 };
