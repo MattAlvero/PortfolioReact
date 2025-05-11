@@ -5,11 +5,12 @@ type NavbarLinkProps = {
   to: string;
   label: string;
   className?: string;
+  onClick?: () => void;
 };
 
-const NavbarLink = ({ to, label, className = "" }: NavbarLinkProps) => {
+const NavbarLink = ({ to, label, className = "", onClick }: NavbarLinkProps) => {
   return (
-    <Link to={to} className={`text-lg ${className}`}>
+    <Link to={to} className={`text-lg ${className}`} onClick={onClick}>
       {label}
     </Link>
   );

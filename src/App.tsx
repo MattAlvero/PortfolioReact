@@ -8,7 +8,7 @@ import ContactPage from './components/pages/ContactPage'
 
 function App() {
   return (
-    <div className="max-w-screen-lg mx-auto px-4">
+    <div className="">
       <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage />} />

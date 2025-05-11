@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../atoms/Icon";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 import Button from "../atoms/Button";
 
 type MobileMenuButtonProps = {
@@ -9,7 +9,7 @@ type MobileMenuButtonProps = {
 const MobileMenuButton = ({ onClick }: MobileMenuButtonProps) => {
   return (
     <Button onClick={onClick} className="lg:hidden">
-      <Icon icon="fa fa-bars" className="text-white text-2xl" />
+      <Bars3Icon className="text-white text-2xl w-6" />
     </Button>
   );
 };
