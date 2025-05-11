@@ -26,7 +26,7 @@ const HomePage = () => {
             </div>
             <div>
               <p className="font-bold text-black">LinkedIn</p>
-              <a href="https://www.linkedin.com/in/matthew-alvero"><UserIcon className="size-12 text-blue"/></a>
+              <a href="https://www.linkedin.com/in/matthew-alvero"><UserIcon className="size-12 text-blue-700"/></a>
             </div>
             <div>
               <p className="font-bold text-black">Email</p>
