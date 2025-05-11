@@ -1,14 +1,10 @@
+// src/components/organisms/Navbar.tsx
 import React, { useState } from "react";
 import Logo from "../molecules/Logo";
-import NavbarLink from "../molecules/NavbarLink";
-import SearchBar from "../molecules/SearchBar";
+import NavbarLink from "../molecules/NavbarLink"; // Use NavbarLink here
 import MobileMenuButton from "../molecules/MobileMenuButton";
 
-type NavbarProps = {
-  onSearch: (query: string) => void;
-};
-
-const Navbar = ({ onSearch }: NavbarProps) => {
+const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -23,26 +19,21 @@ const Navbar = ({ onSearch }: NavbarProps) => {
       {/* Mobile menu button */}
       <MobileMenuButton onClick={toggleMobileMenu} />
 
-      {/* Search bar (desktop) */}
-      <div className="hidden lg:block">
-        <SearchBar placeholder="Search..." onSearch={onSearch} />
-      </div>
-
       {/* Navbar links (desktop) */}
       <div className="hidden lg:flex space-x-4">
-          <NavbarLink label="About" />
-          <NavbarLink label="Experience" />
-          <NavbarLink label="Projects" />
-          <NavbarLink label="Contact" />
+        <NavbarLink to="/" label="About" className="text-white hover:text-gray-300" />
+        <NavbarLink to="/experience" label="Experience" className="text-white hover:text-gray-300" />
+        <NavbarLink to="/projects" label="Projects" className="text-white hover:text-gray-300" />
+        <NavbarLink to="/contact" label="Contact" className="text-white hover:text-gray-300" />
       </div>
 
       {/* Mobile menu (when screen is small and button is clicked) */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-16 left-0 w-full bg-gray-700 text-white p-4">
-          <NavbarLink label="About" />
-          <NavbarLink label="Experience" />
-          <NavbarLink label="Projects" />
-          <NavbarLink label="Contact" />
+          <NavbarLink to="/" label="About" className="block py-2" />
+          <NavbarLink to="/experience" label="Experience" className="block py-2" />
+          <NavbarLink to="/projects" label="Projects" className="block py-2" />
+          <NavbarLink to="/contact" label="Contact" className="block py-2" />
         </div>
       )}
     </nav>

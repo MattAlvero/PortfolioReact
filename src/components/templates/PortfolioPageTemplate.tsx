@@ -1,16 +1,12 @@
 import React from "react";
-import Navbar from "../UI/organisms/Navbar";
+
 type PortfolioPageTemplateProps = {
-  onSearch: (query: string) => void;
   children: React.ReactNode;
 };
 
-const PortfolioPageTemplate = ({ onSearch, children }: PortfolioPageTemplateProps) => {
+const PortfolioPageTemplate = ({ children }: PortfolioPageTemplateProps) => {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Navbar */}
-      <Navbar onSearch={onSearch} />
-
       {/* Main content area */}
       <main className="flex-1 p-8 bg-gray-100">
         {children}

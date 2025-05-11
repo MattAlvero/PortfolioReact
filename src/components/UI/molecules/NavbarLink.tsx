@@ -1,18 +1,17 @@
 import React from "react";
-import Button from "../atoms/Button";
-import Text from "../atoms/Text";
+import { Link } from "react-router"; // Import Link from react-router-dom
 
 type NavbarLinkProps = {
+  to: string;
   label: string;
-  onClick?: () => void;
   className?: string;
 };
 
-const NavbarLink = ({ label, onClick, className = "" }: NavbarLinkProps) => {
+const NavbarLink = ({ to, label, className = "" }: NavbarLinkProps) => {
   return (
-    <Button onClick={onClick} className={`text-lg ${className}`}>
-      <Text>{label}</Text>
-    </Button>
+    <Link to={to} className={`text-lg ${className}`}>
+      {label}
+    </Link>
   );
 };
 
